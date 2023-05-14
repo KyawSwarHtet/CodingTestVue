@@ -68,7 +68,7 @@ const config = useRuntimeConfig();
 const postId = computed(() => route.params.id);
 
 const { data } = await useFetch<DataEntity>(
-  `http://localhost:8000/api/detail/${postId.value}`
+  `https://kshcodetest.onrender.com/api/detail/${postId.value}`
 );
 
 const imgURL = computed(() => data.value?.files);

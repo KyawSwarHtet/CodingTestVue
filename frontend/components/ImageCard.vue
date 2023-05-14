@@ -50,7 +50,7 @@ const props = defineProps({
 const DeleteImg = async (_id: string | undefined) => {
   try {
     await axios
-      .delete(`http://localhost:8000/api/delete/` + _id)
+      .delete(`https://kshcodetest.onrender.com/api/delete/` + _id)
       .then((result) => {
         console.log("error delete", result);
         const message = result.data.message;

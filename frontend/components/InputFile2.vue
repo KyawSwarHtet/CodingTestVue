@@ -42,13 +42,21 @@
     </div>
 
     <div class="field">
-      <v-btn color="green-lighten-1" variant="elevated">upload</v-btn>
+      <v-btn v-if="loading" disabled color="red-lighten-1" variant="elevated">
+        <!-- <v-btn v-if="loading" type="submit" color="green-lighten-1" variant="elevated"> -->
+        Upload
+      </v-btn>
+      <v-btn v-else type="submit" color="green-lighten-1" variant="elevated">
+        <!-- <v-btn v-if="loading" type="submit" color="green-lighten-1" variant="elevated"> -->
+        Upload
+      </v-btn>
     </div>
   </form>
 </template>
 
 <script>
 import axios from "axios";
+// const [loading, setLoading] = useState < Boolean > false;
 
 export default {
   name: "SimpleUpload",
@@ -58,6 +66,7 @@ export default {
       files: [],
       message: "",
       error: false,
+      loading: false,
     };
   },
 
@@ -69,26 +78,30 @@ export default {
       this.files = this.$refs.files.files;
       this.error = false;
       this.message = "";
+      this.loading = false;
     },
     async sendFile() {
+      this.loading = true;
+      console.log("loadigin inside send function", this.loading);
       const formData = new FormData();
       for (let i = 0; i < this.files.length; i++) {
         formData.append("files", this.files[i]);
       }
-      const data1 = Object.fromEntries(formData.entries());
-      console.log("form data", data1);
 
       try {
         await axios
-          .post("http://localhost:8000/api/upload", formData)
+          .post("https://kshcodetest.onrender.com/api/upload", formData)
           .then((result) => {
             this.message = result.data.message;
             this.files = [];
             this.error = false;
+            this.loading = false;
+            console.log("loadign after api call", this.loading);
           });
       } catch (error) {
         this.message = error.response.data.message;
         this.error = true;
+        this.loading = false;
       }
     },
   },

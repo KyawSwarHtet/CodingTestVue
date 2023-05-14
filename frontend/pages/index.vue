@@ -48,7 +48,7 @@ const {
   pending,
   refresh,
   error,
-} = await useFetch<APIResponse>(`http://localhost:8000/api/upload`);
+} = await useFetch<APIResponse>(`https://kshcodetest.onrender.com/api/upload`);
 const Filedata = apidata.value?.data;
 
 console.log("post ", Filedata);
