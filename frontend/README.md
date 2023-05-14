@@ -1,42 +1,36 @@
-# Nuxt 3 Minimal Starter
+# Coding Test for Uploading images using Nuxt.js for frontend, Vuetify.js for the UI Library ,REST api, Deployed the project on https://vercel.com/
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is the coding test project:
+
+\*to upload the images using Nuxt.js, Vuetify.js, Tailwind.css and using REST api.
+
+- Hosting the application on Cloud
+
+## How to start the Frontend project
+
+1. clone the project
 
 ## Setup
 
-Make sure to install the dependencies:
+2.Make sure to install the dependencies:
 
-```bash
-# yarn
+````bash
+# yarn for mac user
 yarn install
 
-# npm
+# npm for window user
 npm install
 
-# pnpm
-pnpm install
-```
 
 ## Development Server
 
 Start the development server on `http://localhost:3000`
 
 ```bash
+## this command to run the project
 npm run dev
-```
+````
 
-## Production
+## Watch the full project
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+<a href="https://codeing-test-vue-bvtp.vercel.app/" target="_blank">Coding test by KyawSwarHtet</a>
