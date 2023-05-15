@@ -60,7 +60,7 @@ const DeleteImg = async (_id: string | undefined) => {
         }, 2000);
       });
   } catch (error: any) {
-    useToast().error(error.data.message);
+    useToast().error(error.response.data.message);
     const message = error.response.data.message;
   }
 };
