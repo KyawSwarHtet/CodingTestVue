@@ -55,7 +55,9 @@ const DeleteImg = async (_id: string | undefined) => {
       .then((result) => {
         useToast().success(result.data.message);
         const message = result.data.message;
-        location.reload();
+        setTimeout(async () => {
+          await location.reload();
+        }, 2000);
       });
   } catch (error: any) {
     useToast().error(error.data.message);

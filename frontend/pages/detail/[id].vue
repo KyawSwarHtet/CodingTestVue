@@ -72,6 +72,4 @@ const { data } = await useFetch<DataEntity>(
 );
 
 const imgURL = computed(() => data.value?.files);
-
-// console.log("image url is", imgURL);
 </script>

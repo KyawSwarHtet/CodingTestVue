@@ -101,10 +101,12 @@ export default {
             this.files = [];
             this.error = false;
             this.loading = false;
-            location.reload();
+            setTimeout(async () => {
+              await location.reload();
+            }, 2000);
           });
       } catch (error) {
-        useToast().error(error.data.message);
+        useToast().error(error.response.data.message);
         this.message = error.response.data.message;
         this.error = true;
         this.loading = false;
