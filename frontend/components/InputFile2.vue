@@ -110,7 +110,9 @@ export default {
         this.message = error.response.data.message;
         this.error = true;
         this.loading = false;
-        location.reload();
+        setTimeout(async () => {
+          await location.reload();
+        }, 2000);
       }
     },
   },
