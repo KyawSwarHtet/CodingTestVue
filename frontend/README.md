@@ -1,4 +1,4 @@
-# Coding Test for Uploading images using Nuxt.js for frontend, Vuetify.js for the UI Library ,REST api, Deployed the project on https://vercel.com/
+# Coding Test for Uploading images using Nuxt 3.js for frontend, Vuetify.js for the UI Library ,REST api, Deployed the project on https://vercel.com/
 
 This project is the coding test project:
 

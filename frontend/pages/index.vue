@@ -1,13 +1,18 @@
 <template>
   <v-app id="inspire">
     <v-app-bar>
-      <v-toolbar-title>Coding Test by Kyaw Swar Htet</v-toolbar-title>
+      <v-toolbar-title
+        >Coding Test by
+        <span class="has-text-link is-size-4">
+          Kyaw Swar Htet</span
+        ></v-toolbar-title
+      >
     </v-app-bar>
     <v-main class="bg-grey-lighten-2">
       <v-container fluid>
         <v-row>
           <v-col cols="12" md="2">
-            <h3 class="my-2 text-center">Please Add Your Images</h3>
+            <h2 class="is-size-4 my-2 text-center">Please Add Your Images</h2>
             <p class="text-body-1 text-red-lighten-1">
               Note: You should upload maximun file size 5MB. <br />
               we allow only (JPEG/JPG/PNG/GIF) file types
@@ -42,16 +47,17 @@
 
 <script setup lang="ts">
 import { APIResponse } from "~~/types/APIResponse";
-// const { pending, data } = await useLazyFetch< APIResponse>('http://localhost:8000/api/upload')
+
 const {
   data: apidata,
   pending,
   refresh,
   error,
 } = await useFetch<APIResponse>(`https://kshcodetest.onrender.com/api/upload`);
+
 const Filedata = apidata.value?.data;
 
-console.log("post ", Filedata);
+// console.log("post ", Filedata);
 watch(apidata, (newPosts) => {
   // Because posts might start out null, you will not have access
   // return newPosts.data

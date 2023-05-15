@@ -40,6 +40,7 @@
 import { PropType } from "vue";
 import { DataEntity } from "~/types/APIResponse";
 import axios from "axios";
+import useToast from "../composables/useToast";
 
 const props = defineProps({
   post: {
@@ -52,15 +53,13 @@ const DeleteImg = async (_id: string | undefined) => {
     await axios
       .delete(`https://kshcodetest.onrender.com/api/delete/` + _id)
       .then((result) => {
-        console.log("error delete", result);
+        useToast().success(result.data.message);
         const message = result.data.message;
-        console.log("retuen message from delete", message);
       });
   } catch (error: any) {
+    useToast().error(error.data.message);
     const message = error.response.data.message;
-    console.log("error deleting is", error);
   }
 };
 
-// const imgURL = computed(()=>props.post?.files !== null ? props.post?.files)
 </script>
