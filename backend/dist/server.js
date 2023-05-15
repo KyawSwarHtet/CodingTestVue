@@ -35,12 +35,14 @@ app.use("/api", image_route_1.default);
 //checking image type and response
 app.use((err, req, res, next) => {
     if (err.name === "LIMIT_FILE_TYPES") {
-        return res.status(422).json({ message: "Only images are allowed" });
+        res.status(422).json({ message: "Only images are allowed" });
+        next();
     }
     if (err.name === "LIMIT_FILE_SIZE") {
-        return res
+        res
             .status(422)
             .json({ message: "Too large. Max size is allowed only 5MB" });
+        next();
     }
     next();
 });
