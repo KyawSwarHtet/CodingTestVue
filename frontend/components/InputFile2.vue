@@ -101,6 +101,7 @@ export default {
             this.files = [];
             this.error = false;
             this.loading = false;
+            location.reload();
           });
       } catch (error) {
         useToast().error(error.data.message);

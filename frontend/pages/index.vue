@@ -57,7 +57,6 @@ const {
 
 const Filedata = apidata.value?.data;
 
-// console.log("post ", Filedata);
 watch(apidata, (newPosts) => {
   // Because posts might start out null, you will not have access
   // return newPosts.data
